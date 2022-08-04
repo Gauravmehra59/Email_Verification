@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'register.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="container">
+            <h1>Register</h1>
+            {% if messages %}
+                <!-- {% for message in messages %} -->
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <!-- {% endfor %} -->
+            {% endif %}
+            <p>Please fill in this form to create an account</p>
+            <hr>
+
+            <label for="name">
+                <b>Full Name</b>
+            </label>
+            <input type="text" placeholder="Enter the Full Name" name="name" id="name" required>
+
+            <label for="email">
+                <b>Email</b>
+            </label>
+            <input type="text" placeholder="Enter the Email" name="email" id="email" required>
+
+            <label for="psw">
+                <b>Password</b>
+            </label>
+            <input type="password" placeholder="Enter the Password" name="psw" id="psw" required>
+
+            <label for="psw-repeat">
+                <b>Repeat Password</b>
+            </label>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+            <hr>
+
+            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+            <button type="submit" class="registerbtn">Register</button>
+
+        </div>
+        <div class="container signin">
+            <p>Already have an account? <a href="\login\">Signin</a>.</p>
+
+        </div>
+    </form>
+</body>
+</html>

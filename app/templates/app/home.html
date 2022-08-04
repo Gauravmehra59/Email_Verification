@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'register.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form action="{% url 'login' %}">
+        <div class="container">
+            <center>
+            <h1>Welcome</h1>
+            <p>{% if msg %}
+                Hello {{msg}}
+
+            {% endif %}</p>
+        </center>
+            <hr>
+            <hr>
+            {% if msg %}
+            <button type="submit" class="registerbtn" >Logout</button>
+            {% else %}
+            <button type="submit" class="registerbtn" >Login</button>
+            {% endif %}
+            
+
+            
+
+        </div>
+        <div class="container signin">
+            <p>Have not an account? <a href="#">Signup</a>.</p>
+
+        </div>
+    </form>
+</body>
+</html>
